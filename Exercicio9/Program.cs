@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exercicio9.Servicos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,8 +11,8 @@ namespace Exercicio9
         private const int Imprimir_Todos_Numeros_Lista = 1;
         private const int Imprimir_Todos_Ordem_Crescente = 2;
         private const int Imprimir_Todos_Ordem_Decrescente = 3;
-        private const int Imprimir_Primeiro_Numero = 4;
-        private const int Imprimir_Ultimo_Numero = 5;
+        private const int Busca_Primeiro_Numero = 4;
+        private const int Busca_Ultimo_Numero = 5;
         private const int Inserir_Primeiro_numero = 6;
         private const int Inserir_Ultimo_numero = 7;
         private const int Remover_Primeiro_numero = 8;
@@ -19,8 +20,13 @@ namespace Exercicio9
         private const int Retornar_Pares = 10;
         private const int Retornar_Numero_Informado = 11;
         private const int Transformar_Array = 12;
+        private const int Sair = 13;
 
-        static public Servicos servicos = new Servicos();
+        static public Encerrar sair = new Encerrar();
+        static public Transformar tranformar = new Transformar();
+        static public Busca busca = new Busca();
+        static public Imprimir imprimir = new Imprimir();
+        static public InsertRemove servicos = new InsertRemove();
         static List<int> lista = new List<int>();
         static void Main(string[] args)
         {
@@ -29,7 +35,7 @@ namespace Exercicio9
         public static void Processar()
         {
             int opcao;
-        
+
             Console.WriteLine("9: Utilizando a biblioteca LINQ crie no console e execute: \n\n" +
                     "  Digite a opção desejada:\n\n" +
                     "   0 - Inserir dados na Lista.\n" +
@@ -44,7 +50,8 @@ namespace Exercicio9
                     "   9 - Remova o último número.\n" +
                     "  10 - Retorne apenas os números pares.\n" +
                     "  11 - Retorne apenas o número informado.\n" +
-                    "  12 - Transforme todos os números da lista em um Array.\n");
+                    "  12 - Transforme todos os números da lista em um Array.\n" +
+                    "  13 - Sair\n");
             Console.Write("Opção: ");
 
             opcao = int.Parse(Console.ReadLine());
@@ -55,19 +62,19 @@ namespace Exercicio9
                     servicos.InserirDados(lista);
                     break;
                 case Imprimir_Todos_Numeros_Lista:
-                    servicos.ImprimirLista(lista);
+                    imprimir.ImprimirLista(lista);
                     break;
                 case Imprimir_Todos_Ordem_Crescente:
-                    servicos.ImprimirCrescrente(lista);
+                    imprimir.ImprimirCrescrente(lista);
                     break;
                 case Imprimir_Todos_Ordem_Decrescente:
-                    servicos.ImprimirDecrescrente(lista);
+                    imprimir.ImprimirDecrescrente(lista);
                     break;
-                case Imprimir_Primeiro_Numero:
-                    servicos.PrimeiroDaLista(lista);
+                case Busca_Primeiro_Numero:
+                    busca.PrimeiroDaLista(lista);
                     break;
-                case Imprimir_Ultimo_Numero:
-                    servicos.UltimoDaLista(lista);
+                case Busca_Ultimo_Numero:
+                    busca.UltimoDaLista(lista);
                     break;
                 case Inserir_Primeiro_numero:
                     servicos.InserirInicio(lista);
@@ -82,13 +89,16 @@ namespace Exercicio9
                     servicos.RemoverUltimo(lista);
                     break;
                 case Retornar_Pares:
-                    servicos.RetornarPares(lista);
+                    busca.BuscaPares(lista);
                     break;
                 case Retornar_Numero_Informado:
-                    servicos.RetornInformado(lista);
+                    busca.BuscaInformado(lista);
                     break;
                 case Transformar_Array:
-                    servicos.TrasnformarArray(lista);
+                    tranformar.TrasnformarArray(lista);
+                    break;
+                case Sair:
+                    sair.Fechar();
                     break;
             }
             Console.Clear();
