@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Exercicio3
 {
-    public class ContaCorrente : ContaBancaria
+    public class ContaCorrente : ContaBancaria, Imprimivel
     {
         const double taxaDeOperacao = 0.2;
 
@@ -29,6 +29,10 @@ namespace Exercicio3
             }
         }
 
-        
+        public void MostrarDados()
+        {
+            Console.WriteLine("\nConta Corrente:\n" +
+                $"Numero da Conta: {NumeroDaConta}  Saldo: {Saldo.ToString("N2")}");
+        }
     }
 }
