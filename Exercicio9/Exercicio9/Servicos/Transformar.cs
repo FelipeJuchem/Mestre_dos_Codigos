@@ -15,7 +15,6 @@ namespace Exercicio9
                 Console.Write("-" + num);
             }
             Console.WriteLine("\n\nPressione Enter para voltar ao menu!");
-            Console.ReadKey();
         }
     }
 }

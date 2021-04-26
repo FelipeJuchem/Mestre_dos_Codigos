@@ -25,8 +25,8 @@ namespace ListaFuncionarios
                 Console.WriteLine();
             }
 
-            servicos.Maior(listaFuncionario);
-            servicos.Menor(listaFuncionario);
+            servicos.MaiorSalario(listaFuncionario);
+            servicos.MenorSalario(listaFuncionario);
             
 
         }

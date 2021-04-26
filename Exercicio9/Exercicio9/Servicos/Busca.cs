@@ -7,21 +7,21 @@ namespace Exercicio9
 {
     public class Busca
     {
-        public void PrimeiroDaLista(List<int> lista)
+        public int PrimeiroDaLista(List<int> lista)
         {
             int x = lista.FirstOrDefault();
             Console.WriteLine("Primeiro numero da lista: {0}", x + "\n");
             Console.WriteLine("Pressione Enter para voltar ao menu!");
-            Console.ReadKey();
+            return x;
         }
-        public void UltimoDaLista(List<int> lista)
+        public int UltimoDaLista(List<int> lista)
         {
             int x = lista.LastOrDefault();
             Console.WriteLine("Ultimo numero da lista: {0}", x + "\n");
             Console.WriteLine("Pressione Enter para voltar ao menu!");
-            Console.ReadKey();
+            return x;
         }
-        public void BuscaPares(List<int> lista)
+        public List<int> BuscaPares(List<int> lista)
         {
             Console.WriteLine("\nNumeros pares:");
             var pares = lista.Where(x => x % 2 == 0).ToList();
@@ -30,8 +30,9 @@ namespace Exercicio9
                 Console.Write(num + "-");
             }
             Console.WriteLine("\n\nPressione Enter para voltar ao menu!");
-            Console.ReadKey();
+            return pares;
         }
+        
         public void BuscaInformado(List<int> lista)
         {
             Console.Write("Informe o numero que deseja verificar na lista:");
@@ -40,15 +41,13 @@ namespace Exercicio9
             {
                 Console.WriteLine("Numero(s) encontrado(s)");
                 lista.Where(x => x.Equals(n)).ToList().ForEach(x => Console.WriteLine(x));
+                Console.WriteLine("Pressione Enter para voltar ao menu!");
             }
             else
             {
                 Console.WriteLine("Valor não encontrado!");
+                Console.WriteLine("Pressione Enter para voltar ao menu!");
             }
-            Console.WriteLine("Pressione Enter para voltar ao menu!");
-            Console.ReadKey();
         }
-
-
     }
 }

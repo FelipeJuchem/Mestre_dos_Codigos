@@ -17,7 +17,7 @@ namespace RefOut
         {
             Nome = nome;
         }
-        public void mudar(ref Objeto obj)
+        public void mudarNomeParaAlan(ref Objeto obj)
         {
             obj = new Objeto();
             obj.Nome = "Alan";

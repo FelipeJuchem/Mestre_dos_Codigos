@@ -7,7 +7,7 @@ namespace ListaFuncionarios
 {
     public class Servicos
     {
-        public void Menor(List<Funcionario> listaFuncionario)
+        public Funcionario MenorSalario(List<Funcionario> listaFuncionario)
         {
             int indexFuncionario = 0;
             Funcionario funcionario = new Funcionario();
@@ -21,8 +21,9 @@ namespace ListaFuncionarios
                 indexFuncionario++;
             }
             Console.WriteLine($"Menor Salario: "+funcionario);
+            return funcionario;
         }
-        public void Maior(List<Funcionario> listaFuncionario)
+        public Funcionario MaiorSalario(List<Funcionario> listaFuncionario)
         {
             int indexFuncionario = 0;
             Funcionario funcionario = new Funcionario();
@@ -36,6 +37,7 @@ namespace ListaFuncionarios
                 indexFuncionario++;
             }
             Console.WriteLine("Maior Salario: "+funcionario);
+            return funcionario;
         } 
     }
 }

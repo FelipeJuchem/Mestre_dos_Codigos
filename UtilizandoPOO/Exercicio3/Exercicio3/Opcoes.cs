@@ -29,9 +29,8 @@ namespace Exercicio3
                 "4 = Sacar\n" +
                 "5 = Imprimir Dados");
 
-            int opcao;
             Console.Write("\nOpção: ");
-            opcao = int.Parse(Console.ReadLine());
+            int.TryParse(Console.ReadLine(), out int opcao);
             Console.Write(Environment.NewLine);
 
             switch (opcao)

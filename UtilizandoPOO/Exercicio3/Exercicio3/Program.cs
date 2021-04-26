@@ -25,8 +25,5 @@ namespace Exercicio3
             Console.Clear();
             goto inicio;
         }
-
-        
-
     }
 }

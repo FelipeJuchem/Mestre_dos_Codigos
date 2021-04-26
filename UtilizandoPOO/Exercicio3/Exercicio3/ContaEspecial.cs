@@ -21,12 +21,12 @@ namespace Exercicio3
 
         public override void Sacar(double valor)
         {
-            if (Saldo - valor < -10) 
+            if (Saldo - valor < Limite) 
             {
                 Console.WriteLine("Saldo Insuficiente para o saque!");
-                if (Saldo - valor >= -10)
+                if (Saldo - valor >= Limite)
                 {
-                    Console.WriteLine("Limite de $-10 Reais");
+                    Console.WriteLine($"Limite de ${Limite} Reais");
                 }
             }
             else

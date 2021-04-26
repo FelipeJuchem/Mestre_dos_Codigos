@@ -16,19 +16,16 @@ namespace Exercicio9
             {
                 Console.WriteLine("  Digite o numero:");
                 int numero = int.Parse(Console.ReadLine());
-                lista.Add(numero);
-                Console.WriteLine(" Adicionado com sucesso!\n ");
+                Inserir(lista, numero);
             }
             Console.WriteLine("Pressione Enter para voltar ao menu!");
-            Console.ReadKey();
         }
-        
         
         public void InserirInicio(List<int> lista)
         {
             Console.WriteLine("Digite o numero que deseja adicionar no inicio da lista:");
             int x = int.Parse(Console.ReadLine());
-            lista.Insert(0, x);
+            InserirNoInicioDaLista(lista, x);
             Console.WriteLine("Pressione Enter para voltar ao menu!");
             Console.ReadKey();
         }
@@ -36,24 +33,51 @@ namespace Exercicio9
         {
             Console.WriteLine("Digite o numero que deseja adicionar no final da lista:");
             int x = int.Parse(Console.ReadLine());
-            lista.Add(x);
+            InserirNoFimDaLista(lista,x);
             Console.WriteLine("Pressione Enter para voltar ao menu!");
             Console.ReadKey();
         }
         public void RemoverPrimeiro(List<int> lista)
         {
             Console.WriteLine($"Numero {lista.First()} foi removido com sucesso!");
-            lista.RemoveAt(0);
+            RemoverPrimeiroDaLista(lista);
             Console.WriteLine("Pressione Enter para voltar ao menu!");
             Console.ReadKey();
         }
         public void RemoverUltimo(List<int> lista)
         {
             Console.WriteLine($"Numero {lista.Last()} foi removido com sucesso!");
-            lista.RemoveAt(lista.Count - 1);
+            RemoverUltimoDaLista(lista);
             Console.WriteLine("Pressione Enter para voltar ao menu!");
             Console.ReadKey();
         }
+
+        public void InserirNoInicioDaLista(List<int> lista, int numero)
+        {
+            lista.Insert(0, numero);
+        }
+
+        public void InserirNoFimDaLista(List<int> lista, int numero)
+        {
+            lista.Add(numero);
+        }
+
+        public void Inserir(List<int> lista, int numero)
+        {
+            lista.Add(numero);
+        }
+
+        public void RemoverPrimeiroDaLista(List<int> lista)
+        {
+            lista.RemoveAt(0);
+        }
+
+        public void RemoverUltimoDaLista(List<int> lista)
+        {
+            lista.RemoveAt(lista.Count - 1);
+        }
+
+        
         
         
     }

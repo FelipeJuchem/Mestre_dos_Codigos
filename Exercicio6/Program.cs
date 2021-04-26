@@ -15,7 +15,7 @@ namespace RefOut
             Console.WriteLine("Nome esta com Valor digitado");
             Console.WriteLine(" * "+obj.Nome+" * ");
             //Mudo o objeto atraves da Referencia
-            obj.mudar(ref obj);
+            obj.mudarNomeParaAlan(ref obj);
             Console.WriteLine("Chamando metodo passando REF ele muda o valor do Objeto e sua referencia");
             Console.WriteLine(" * " +obj.Nome + " * " + Environment.NewLine);
 

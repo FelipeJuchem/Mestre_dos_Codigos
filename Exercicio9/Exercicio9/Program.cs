@@ -60,6 +60,7 @@ namespace Exercicio9
             {
                 case Inserir_Dados_Lista:
                     servicos.InserirDados(lista);
+                    Console.ReadKey();
                     break;
                 case Imprimir_Todos_Numeros_Lista:
                     imprimir.ImprimirLista(lista);
@@ -72,9 +73,11 @@ namespace Exercicio9
                     break;
                 case Busca_Primeiro_Numero:
                     busca.PrimeiroDaLista(lista);
+                    Console.ReadKey();
                     break;
                 case Busca_Ultimo_Numero:
                     busca.UltimoDaLista(lista);
+                    Console.ReadKey();
                     break;
                 case Inserir_Primeiro_numero:
                     servicos.InserirInicio(lista);
@@ -90,12 +93,15 @@ namespace Exercicio9
                     break;
                 case Retornar_Pares:
                     busca.BuscaPares(lista);
+                    Console.ReadKey();
                     break;
                 case Retornar_Numero_Informado:
                     busca.BuscaInformado(lista);
+                    Console.ReadKey();
                     break;
                 case Transformar_Array:
                     tranformar.TrasnformarArray(lista);
+                    Console.ReadKey();
                     break;
                 case Sair:
                     sair.Fechar();

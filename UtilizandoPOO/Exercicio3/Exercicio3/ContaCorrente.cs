@@ -6,8 +6,6 @@ namespace Exercicio3
 {
     public class ContaCorrente : ContaBancaria, Imprimivel
     {
-        const double taxaDeOperacao = 0.2;
-
         public override void Depositar(double valor)
         {
             valor = valor - taxaDeOperacao;
